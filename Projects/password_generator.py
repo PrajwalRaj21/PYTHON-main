@@ -1,30 +1,16 @@
-#simple password generator
-
 import random
 
-uppercase_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-lowercase_letters = uppercase_letters.lower()
-digits = "0123456789"
-symbols = "!@#$%^&*();//?+-*"  #may contatin anything
-
-upper, lower, nums, syms = True, True, True, True
-
-all = ""
-
-if upper:
-    all += uppercase_letters
-if lower:
-    all += lowercase_letters
-if digits:
-      all += digits
-if syms:
-     all += symbols
+chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLNOPQRSTUVWXYZ0123456789!@#$^&*()_+"
 
 
-length = 20
-amount = 10
+while 1:
+    password_len = int(input("What lenght would you like?: "))
+    password_count = int(input("How many passwords would you like: "))
 
-for x in range(amount):
-     password = "".join(random.sample(all.length))
-     print(password)
-
+    for x in range (0, password_count):
+        password = ""
+        for x in range(0, password_len):
+            password_char = random.choice(chars)
+            password      = password + password_char
+            print("Password: ", password)
+            
